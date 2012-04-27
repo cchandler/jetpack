@@ -30,6 +30,7 @@ import javax.servlet.http.HttpServletResponse;
 //  curl -Ik -X GET 'https://localhost:4443/xss<SCRIPT>.aspx'
 // curl -Ik -X DEBUG 'https://localhost:4443/'
 // cp ValidUrlFilter.class ~/Development/taxi/WEB-INF/classes/jetpack/filter/
+// Does not handle foo.bar.squareup.com type urls
 
 
 public class IgnoreUnknownHttpMethodsFilter implements Filter {
