@@ -10,6 +10,28 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//javac -classpath .:/Users/square/Development/taxi/vendor/jetty/lib/servlet-api-3.0.jar IgnoreUnknownHttpMethodsFilter.java
+//
+//javac -classpath .:/Users/square/Development/taxi/vendor/jetty/lib/servlet-api-3.0.jar:/Users/square/Development/taxi/WEB-INF/lib/commons-validator-1.4.0.jar ValidUrlFilter.java
+//
+//
+//<filter>
+//  <filter-name>IgnoreUnknownHttpMethodsFilter</filter-name>
+//  <filter-class>jetpack.filter.IgnoreUnknownHttpMethodsFilter</filter-class>
+//</filter>
+//
+//<filter-mapping>
+//  <filter-name>IgnoreUnknownHttpMethodsFilter</filter-name>
+//  <url-pattern>/*</url-pattern>
+//</filter-mapping>
+//
+//
+// curl -Ik -X GET 'https://localhost:4443/<script>xss</script>.aspx'
+//  curl -Ik -X GET 'https://localhost:4443/xss<SCRIPT>.aspx'
+// curl -Ik -X DEBUG 'https://localhost:4443/'
+// cp ValidUrlFilter.class ~/Development/taxi/WEB-INF/classes/jetpack/filter/
+
+
 public class IgnoreUnknownHttpMethodsFilter implements Filter {
 
     java.util.List<String> allowedMethodList;
