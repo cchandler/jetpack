@@ -53,6 +53,8 @@ script_start_time = Time.now
 @jetpack_dir   = File.expand_path(File.join(File.dirname(__FILE__), ".."))
 
 @gem_home = "file:" + File.expand_path(File.join(@settings.app_root, @jruby_jar_file)) + "!/META-INF/jruby.home/lib/ruby/gems/1.8"
+@jetty_relative_gem_path = @gem_home + ":../vendor/bundler_gem"
+
 @gem_path = @gem_home + ":vendor/bundler_gem"
 
 @java_dash_jar = "PATH=$PATH:$(dirname $0) GEM_HOME=\"#{@gem_home}\" GEM_PATH=\"#{@gem_path}\" exec java #{@settings.java_options} -jar"

@@ -9,7 +9,7 @@ this_dir="$( cd -P "$( dirname "$source" )" && pwd )"
 
 cd $this_dir/../vendor/jetty
 
-PATH=$PATH:$(dirname $0) GEM_PATH="<%= @gem_path %>" exec java -jar <%= @settings.java_options %> \
+PATH=$PATH:$(dirname $0) GEM_PATH="<%= @jetty_relative_gem_path %>" exec java -jar <%= @settings.java_options %> \
      -Djetty.logs=$this_dir/../log \
      -Djetty.home=$this_dir/../vendor/jetty \
      -Djava.io.tmpdir=/tmp \
